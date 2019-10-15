@@ -6,14 +6,44 @@
 // --- Examples
 //   pyramid(1)
 //       '#'
-//   pyramid(2)
+//   pyramid(2) -- 3 spaces
 //       ' # '
 //       '###'
-//   pyramid(3)
+//   pyramid(3) -- 5 spaces
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4) -- 7 spaces
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
 
-function pyramid(n) {}
+function pyramid(n) {
+  let columns = 0;
+  if (n == 1) {
+    columns = 1;
+  } else {
+    columns = n + (n - 1);
+  }
+
+  let mid_point = parseInt(columns / 2);
+
+  for (let row = 0; row < n; row++) {
+    let stair = '';
+    for (let column = 0; column < columns; column++) {
+      if (column == mid_point) {
+        stair += '#';
+      } else if (column == mid_point - row || column == mid_point + row) {
+        stair += '#';
+      } else if (column > mid_point - row && column < mid_point + row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+    console.log(stair);
+  }
+}
 
 module.exports = pyramid;
