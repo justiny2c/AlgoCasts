@@ -31,8 +31,8 @@ function pyramid(n) {
 
   for (let row = 0; row < n; row++) {
     let stair = '';
-    for (let column = 0; column < columns; column++) {
-      if (column == mid_point) {
+    for (let column = 0; column < columns; column++) {  
+      if (column == mid_point) { // to simplify the if and else if's: (mid_point - row <= column && mid_point >= column)
         stair += '#';
       } else if (column == mid_point - row || column == mid_point + row) {
         stair += '#';
