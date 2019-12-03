@@ -35,7 +35,6 @@ class Queue {
       // put everything into 1st stack
       this.firstStack.push(this.secondStack.pop());
     }
-
     return record;
   }
 
@@ -44,13 +43,12 @@ class Queue {
       // pushing to 2nd stack
       this.secondStack.push(this.firstStack.pop());
     }
-    const record = this.secondStack.peek();
+    const record = this.secondStack.peek(); // looks at last element in stack
 
     while (this.secondStack.peek()) {
       // put everything into 1st stack
       this.firstStack.push(this.secondStack.pop());
     }
-
     return record;
   }
 }
