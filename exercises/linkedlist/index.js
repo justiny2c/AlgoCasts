@@ -18,6 +18,10 @@ class LinkedList {
     // insert node at head inside the List
     this.head = new Node(data, this.head);
   }
+
+  size(){ // walk through the list, return number of nudes
+
+  }
 }
 
 // const list = new LinkedList();
