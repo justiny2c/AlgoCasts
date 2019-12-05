@@ -19,8 +19,21 @@ class LinkedList {
     this.head = new Node(data, this.head);
   }
 
-  size(){ // walk through the list, return number of nudes
+  size() {
+    // walk through the list, return number of nudes
+    let count = 0;
+    let node = this.head;
 
+    while (node) {
+      count++;
+      node = node.next;
+    }
+
+    return count;
+  }
+
+  getFirst() {
+    return this.head;
   }
 }
 
