@@ -89,6 +89,21 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+
+  getAt(index) {
+    // index 0 is first Node = this.head
+    // return entire Node
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      if (index == counter) {
+        return node;
+      }
+      counter++;
+      node = node.next;
+    }
+    return null; // couldn't find an index while running the while loop above (index out of range)
+  }
 }
 
 // const list = new LinkedList();
