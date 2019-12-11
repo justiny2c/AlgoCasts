@@ -104,6 +104,21 @@ class LinkedList {
     }
     return null; // couldn't find an index while running the while loop above (index out of range)
   }
+
+  removeAt(index) {
+    if (!this.head) {
+      return null;
+    }
+    if (index == 0) {
+      this.head = this.head.next;
+    }
+
+    let prevNode = this.getAt(index - 1);
+    if (!prevNode || !prevNode.next) {
+      return null;
+    }
+    prevNode.next = prevNode.next.next;
+  }
 }
 
 // const list = new LinkedList();
