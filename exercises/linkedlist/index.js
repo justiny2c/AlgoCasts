@@ -119,6 +119,22 @@ class LinkedList {
     }
     prevNode.next = prevNode.next.next;
   }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+
+    if (index == 0) {
+      this.head = new Node(data, this.head);
+    }
+
+    let prevNode = this.getAt(index - 1) || this.getLast()
+    let newNode = new Node(data, prevNode.next); 
+    prevNode.next = newNode;
+
+  }
 }
 
 // const list = new LinkedList();
