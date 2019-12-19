@@ -20,7 +20,11 @@ class Node {
     // let node = new Node(data);
     this.children.push(new Node(data));
   }
-  remove() {}
+  remove(data) {
+    this.children = this.children.filter(node => {
+      return node.data !== data;
+    });
+  }
 }
 
 class Tree {}
