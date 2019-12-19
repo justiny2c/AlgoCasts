@@ -11,11 +11,18 @@
 // function that gets called with each element in the tree
 
 class Node {
+  constructor(data) {
+    this.data = data;
+    this.children = [];
+  }
 
+  add(data) {
+    // let node = new Node(data);
+    this.children.push(new Node(data));
+  }
+  remove() {}
 }
 
-class Tree {
-    
-}
+class Tree {}
 
 module.exports = { Tree, Node };
