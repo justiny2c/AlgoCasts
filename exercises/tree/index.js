@@ -27,6 +27,8 @@ class Node {
   }
 }
 
-class Tree {}
+class Tree {
+    
+}
 
 module.exports = { Tree, Node };
