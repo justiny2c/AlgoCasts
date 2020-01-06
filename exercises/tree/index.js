@@ -33,6 +33,7 @@ class Tree {
   }
 
   traverseBF(fn) {
+    // breadth first
     let array = [this.root];
     while (array.length) {
       let node = array.shift(); // remove first element from array
@@ -42,7 +43,9 @@ class Tree {
     }
   }
 
-  traverseDF() {}
+  traverseDF() {
+    // depth first
+  }
 }
 
 module.exports = { Tree, Node };
