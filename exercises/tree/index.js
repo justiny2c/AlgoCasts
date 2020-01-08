@@ -20,6 +20,7 @@ class Node {
     // let node = new Node(data);
     this.children.push(new Node(data));
   }
+
   remove(data) {
     this.children = this.children.filter(node => {
       return node.data !== data;
@@ -34,6 +35,7 @@ class Tree {
 
   traverseBF(fn) {
     // breadth first
+    // like a "Queue"
     let array = [this.root];
     while (array.length) {
       let node = array.shift(); // remove first element from array
@@ -43,8 +45,16 @@ class Tree {
     }
   }
 
-  traverseDF() {
+  traverseDF(fn) {
     // depth first
+    // like a  "Stack"
+    let array = [this.root];
+    while (array.length) {
+      let node = array.shift(); // remove first element from array
+
+      array.unshift(...node.children); // add each child/elements and push into array into front
+      fn(node);
+    }
   }
 }
 
