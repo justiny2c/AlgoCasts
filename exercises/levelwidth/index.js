@@ -12,7 +12,9 @@
 // Answer: [1, 3, 2]
 
 function levelWidth(root) {
-    // return width of each level
+  // root is a node we are working with
+  // typically with "width", we are thinking about a breadth first traversal
+  // return width of each level
 }
 
 module.exports = levelWidth;
