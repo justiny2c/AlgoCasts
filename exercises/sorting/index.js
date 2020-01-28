@@ -40,6 +40,20 @@ function selectionSort(arr) {
 
 function mergeSort(arr) {}
 
-function merge(left, right) {}
+function merge(left, right) {
+  // take two sorted arrays, and merge into one
+  const results = [];
+
+  while (left.length && right.length) {
+    // while elements are in both left and right arrays
+    if (left[0] < right[0]) {
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+
+  return [...results, ...left, ...right]; // join whatever is left in the left or right array into results
+}
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
