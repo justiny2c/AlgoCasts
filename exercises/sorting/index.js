@@ -38,7 +38,18 @@ function selectionSort(arr) {
   return arr;
 }
 
-function mergeSort(arr) {}
+function mergeSort(arr) {
+  // split into 2 halves
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  const midpoint = Math.floor(arr.length / 2);
+  const left = arr.slice(0, midpoint); // slice from index 0 up until midpoint (not including midpoint)
+  const right = arr.slice(midpoint); // slice from midpoint to end
+
+  return merge(mergeSort(left), mergeSort(right));
+}
 
 function merge(left, right) {
   // take two sorted arrays, and merge into one
